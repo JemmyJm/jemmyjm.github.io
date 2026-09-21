@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jemmy Jeremia | Portofolio</title>
+<meta name="description" content="Portofolio Jemmy Jeremia, siswa XI RPL A SMKN 2 Cimahi. Profil, materi If, materi Loop, dan sertifikat.">
+<meta name="theme-color" content="#14213D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314213D'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23FFC83D'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F6FB;
+  --ink:#14213D;
+  --deep:#0D1630;
+  --blue:#2B4EFF;
+  --sun:#FFC83D;
+  --coral:#FF6B57;
+  --white:#FFFFFF;
+  --muted:#4A5878;
+  --line:#D5DDEC;
+  --font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--font);font-size:1.05rem;line-height:1.65;color:var(--ink);
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(rgba(43,78,255,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(43,78,255,.06) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+body[data-lang="py"] .js{display:none !important}
+body[data-lang="js"] .py{display:none !important}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,92%);margin:0 auto}
+h1,h2,h3{font-weight:800;line-height:1.05;letter-spacing:-.025em;margin:0}
+h2{font-size:clamp(2rem,5vw,3.2rem)}
+h3{font-size:1.35rem;letter-spacing:-.015em;line-height:1.2}
+p{margin:0}
+code,.mono{font-family:var(--mono)}
+.inl{font-family:var(--mono);font-size:.88em;background:rgba(43,78,255,.1);color:var(--blue);padding:.08em .4em;border-radius:5px}
+
+/* Navigasi */
+.nav{position:sticky;top:0;z-index:50;background:rgba(243,246,251,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-weight:800;text-decoration:none;font-size:1.2rem;letter-spacing:-.02em;display:flex;align-items:center;gap:.6rem}
+.brand i{display:grid;place-items:center;width:34px;height:34px;background:var(--ink);color:var(--sun);border-radius:9px;font-style:normal;font-size:1.05rem}
+.menu{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+.menu a{display:block;text-decoration:none;font-weight:500;font-size:.98rem;padding:.45rem .85rem;border-radius:999px;transition:background .2s,color .2s}
+.menu a:hover{background:rgba(20,33,61,.08)}
+.menu a.active{background:var(--ink);color:var(--white)}
+.burger{display:none;background:var(--ink);color:var(--white);border:0;border-radius:10px;width:44px;height:44px;cursor:pointer}
+.burger svg{width:22px;height:22px}
+
+/* Hero */
+.hero{padding:clamp(3rem,8vw,6.5rem) 0 clamp(3.5rem,8vw,6rem)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.hero h1{font-size:clamp(3.2rem,9.5vw,7rem);line-height:.92;letter-spacing:-.045em}
+.hero .lead{margin-top:1.6rem;max-width:34rem;font-size:1.2rem;color:var(--muted)}
+.hero .lead b{color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font);font-weight:700;font-size:1rem;text-decoration:none;padding:.85rem 1.4rem;border-radius:12px;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s;background:var(--white);color:var(--ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn:active{transform:translate(0,0);box-shadow:none}
+.btn.primary{background:var(--blue);color:var(--white)}
+.btn svg{width:20px;height:20px}
+.codecard{background:var(--ink);color:#DCE6FF;border-radius:18px;padding:1.4rem 1.5rem 1.6rem;font-family:var(--mono);font-size:.95rem;line-height:1.85;transform:rotate(-2deg);box-shadow:12px 12px 0 var(--sun);position:relative}
+.codecard .dots{display:flex;gap:.4rem;margin-bottom:1rem}
+.codecard .dots span{width:11px;height:11px;border-radius:50%;background:var(--coral)}
+.codecard .dots span:nth-child(2){background:var(--sun)}
+.codecard .dots span:nth-child(3){background:#5BD6A0}
+.codecard .ln{display:block;white-space:pre-wrap;animation:typein .5s both;animation-delay:calc(var(--i)*.16s + .3s)}
+@keyframes typein{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.k{color:#8FA8FF}.s{color:var(--sun)}.n{color:#7BE0B0}.c{color:#7F8DB5}.f{color:#FF9C8F}
+
+/* Seksi */
+.sec{padding:clamp(4rem,9vw,7rem) 0;scroll-margin-top:66px}
+.sec.white{background:var(--white);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background-image:none}
+.sec.navy{background:var(--ink);color:var(--white);background-image:none}
+.sechead{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.2rem;margin-bottom:2.6rem}
+.sechead p{max-width:36rem;color:var(--muted);margin-top:.8rem}
+.navy .sechead p{color:#B7C4E6}
+.langswitch{display:inline-flex;background:var(--paper);border:2px solid var(--ink);border-radius:12px;padding:3px;gap:3px}
+.navy .langswitch{background:var(--deep);border-color:#3A4B7A}
+.langswitch button{font-family:var(--mono);font-size:.85rem;font-weight:500;border:0;background:transparent;color:inherit;padding:.45rem .9rem;border-radius:9px;cursor:pointer}
+.langswitch button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+.navy .langswitch button[aria-pressed="true"]{background:var(--sun);color:var(--ink)}
+
+/* Profil */
+.profile{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.idcard{background:var(--paper);border:2px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:8px 8px 0 var(--ink)}
+.idcard .top{display:flex;align-items:center;gap:1rem;padding:1.4rem 1.5rem;background:var(--blue);color:var(--white);border-bottom:2px solid var(--ink)}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:1.9rem;border:2px solid var(--ink);flex:none}
+.idcard .top h3{font-size:1.5rem}
+.idcard .top span{opacity:.9;font-size:.95rem}
+.idcard dl{margin:0;padding:.5rem 1.5rem 1rem}
+.idcard .row{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:.85rem 0;border-bottom:1px dashed var(--line)}
+.idcard .row:last-child{border-bottom:0}
+.idcard dt{color:var(--muted);font-size:.95rem}
+.idcard dd{margin:0;font-weight:700}
+.about p+p{margin-top:1rem}
+.about .big{font-size:1.35rem;line-height:1.5;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.chip{font-weight:700;font-size:.95rem;padding:.4rem .95rem;border-radius:999px;border:2px solid var(--ink);background:var(--white)}
+.chip:nth-child(3n+1){background:var(--sun)}
+.chip:nth-child(3n+2){background:#CFE0FF}
+.chip:nth-child(3n){background:#FFD4CD}
+.aboutnote{margin-top:1.8rem;padding-top:1.4rem;border-top:2px solid var(--ink)}
+.aboutnote h3{margin-bottom:.5rem}
+
+/* Kode */
+.code{margin:0;background:var(--ink);color:#DCE6FF;border-radius:14px;padding:1.1rem 1.25rem;font-family:var(--mono);font-size:.9rem;line-height:1.75;overflow-x:auto;tab-size:4}
+.navy .code{background:var(--deep);border:1px solid #2B3C6B}
+.code code{font-family:inherit}
+.lessons{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.lesson{background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.lesson h3{display:flex;align-items:center;gap:.6rem}
+.lesson .tag{font-family:var(--mono);font-size:.8rem;background:var(--ink);color:var(--sun);padding:.15rem .55rem;border-radius:7px}
+.lesson p{color:var(--muted);font-size:1rem}
+.lesson .code{font-size:.85rem;margin-top:auto}
+.navy .lesson{background:#1B2B52;border-color:#3A4B7A}
+.navy .lesson p{color:#B7C4E6}
+.navy .lesson .tag{background:var(--sun);color:var(--ink)}
+
+.opgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem}
+.panel{background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:1.5rem}
+.panel h3{margin-bottom:1rem}
+.optable{width:100%;border-collapse:collapse;font-size:.98rem}
+.optable td{padding:.55rem 0;border-bottom:1px dashed var(--line)}
+.optable tr:last-child td{border-bottom:0}
+.optable td:first-child{font-family:var(--mono);font-weight:700;color:var(--blue);width:5.5rem}
+
+/* Demo */
+.demo{margin-top:1.4rem;background:var(--ink);color:var(--white);border-radius:22px;padding:clamp(1.3rem,3vw,2.2rem);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(1.2rem,3vw,2.4rem);box-shadow:10px 10px 0 var(--sun)}
+.navy .demo{background:var(--paper);color:var(--ink);box-shadow:10px 10px 0 var(--coral)}
+.demo h3{font-size:1.5rem;margin-bottom:.5rem}
+.demo .hint{opacity:.8;font-size:.98rem;margin-bottom:1.3rem}
+.field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.1rem}
+.field label{font-weight:700;font-size:.95rem}
+.field input[type=number],.field select{font-family:var(--font);font-size:1.05rem;padding:.7rem .9rem;border-radius:11px;border:2px solid currentColor;background:transparent;color:inherit;width:100%}
+.field select option{color:var(--ink)}
+.field input[type=range]{width:100%;accent-color:var(--sun);height:28px}
+.navy .field input[type=range]{accent-color:var(--blue)}
+.big-out{display:flex;align-items:center;gap:1rem;margin-top:1.2rem}
+.grade{width:76px;height:76px;border-radius:18px;background:var(--sun);color:var(--ink);display:grid;place-items:center;font-size:2.6rem;font-weight:800;flex:none;border:2px solid var(--ink)}
+.big-out p{font-size:1rem;line-height:1.45}
+.trace{display:flex;flex-direction:column;gap:.5rem}
+.trace .line{display:flex;align-items:center;gap:.8rem;font-family:var(--mono);font-size:.88rem;background:#1D2E56;border-radius:11px;padding:.75rem .9rem;border:2px solid transparent;transition:background .2s,opacity .2s,border-color .2s;overflow-x:auto;white-space:nowrap}
+.trace .badge{flex:none;font-family:var(--font);font-weight:700;font-size:.75rem;padding:.15rem .5rem;border-radius:6px;background:#2E4275;min-width:4.6rem;text-align:center}
+.trace .line.no{opacity:.55}
+.trace .line.no .badge{background:#5A2E3C;color:#FFC0B8}
+.trace .line.yes{background:#243A70;border-color:var(--sun)}
+.trace .line.yes .badge{background:var(--sun);color:var(--ink)}
+.trace .line.skip{opacity:.3}
+.runrow{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.btn.run{background:var(--blue);color:var(--white)}
+.navy .btn.run{box-shadow:none}
+.output{background:var(--ink);color:#B8F5D6;border-radius:14px;padding:1rem 1.2rem;font-family:var(--mono);font-size:.9rem;line-height:1.7;min-height:200px;max-height:290px;overflow-y:auto;margin-top:1rem}
+.output .o{display:block}
+.output .dim{color:#7F8DB5}
+.output .done{color:var(--sun)}
+.demo .code{font-size:.88rem}
+.demo .side{min-width:0}
+
+/* Sertifikat */
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem}
+.cert{background:var(--white);border:2px solid var(--ink);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:8px 8px 0 var(--ink);transition:transform .2s,box-shadow .2s}
+.cert:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink)}
+.cert button.thumb{display:block;padding:0;border:0;border-bottom:2px solid var(--ink);background:var(--paper);cursor:zoom-in;width:100%}
+.cert img{width:100%;height:auto;aspect-ratio:1.4;object-fit:cover}
+.cert .body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.role{align-self:flex-start;font-weight:700;font-size:.85rem;padding:.2rem .75rem;border-radius:999px;border:2px solid var(--ink);background:var(--sun)}
+.role.b{background:#CFE0FF}
+.cert p{color:var(--muted);font-size:1rem}
+.cert .meta{font-family:var(--mono);font-size:.82rem;color:var(--ink)}
+.cert .btn{align-self:flex-start;margin-top:auto;padding:.6rem 1.1rem;font-size:.95rem}
+dialog#lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);width:100%}
+dialog#lb::backdrop{background:rgba(13,22,48,.85)}
+dialog#lb .box{position:relative;background:var(--white);border-radius:16px;padding:.8rem}
+dialog#lb img{width:100%;height:auto;border-radius:10px}
+dialog#lb .close{position:absolute;top:-14px;right:-8px;background:var(--sun);color:var(--ink);border:2px solid var(--ink);border-radius:999px;font-family:var(--font);font-weight:700;padding:.4rem 1rem;cursor:pointer}
+
+/* Kontak */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.ccard{display:flex;align-items:center;gap:1.2rem;text-decoration:none;background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:20px;padding:1.5rem;transition:transform .2s,box-shadow .2s}
+.ccard:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--sun)}
+.ccard .ico{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;flex:none;border:2px solid var(--ink)}
+.ccard .ico svg{width:32px;height:32px}
+.ccard.wa .ico{background:#5BD6A0}
+.ccard.ig .ico{background:var(--coral)}
+.ccard small{display:block;color:var(--muted);font-size:.9rem}
+.ccard strong{font-size:1.4rem;letter-spacing:-.02em}
+footer{padding:1.6rem 0;text-align:center;font-size:.92rem;color:var(--muted);border-top:2px solid var(--ink);background:var(--paper)}
+
+/* Responsif */
+@media (max-width:900px){
+  .hero .wrap,.profile,.demo,.opgrid,.certs,.contact{grid-template-columns:1fr}
+  .lessons{grid-template-columns:1fr}
+  .codecard{transform:rotate(-1deg);max-width:520px}
+  .burger{display:grid;place-items:center}
+  .menu{position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:2px solid var(--ink);padding:.6rem 4%;display:none}
+  .menu.open{display:flex}
+  .menu a{padding:.8rem 1rem;font-size:1.05rem}
+}
+@media (max-width:480px){
+  .idcard .row{grid-template-columns:1fr;gap:.1rem}
+  .codecard{font-size:.82rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body data-lang="py">
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#beranda" class="brand"><i>J</i> Jemmy Jeremia</a>
+    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="menu" id="menu">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#materi-if">Materi If</a></li>
+      <li><a href="#materi-loop">Materi Loop</a></li>
+      <li><a href="#sertifikat">Sertifikat</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- BERANDA -->
+<section class="hero" id="beranda" style="scroll-margin-top:66px">
+  <div class="wrap">
+    <div>
+      <h1>Jemmy<br>Jeremia</h1>
+      <p class="lead">Siswa <b>XI RPL A</b> di <b>SMKN 2 Cimahi</b>. Saya belajar membuat program dan website. Di halaman ini ada profil saya, catatan materi If dan Loop, serta sertifikat yang sudah saya dapat.</p>
+      <div class="cta">
+        <a class="btn primary" href="#materi-if">Baca materi</a>
+        <a class="btn" href="#sertifikat">Lihat sertifikat</a>
+      </div>
+    </div>
+    <div class="codecard" aria-hidden="true">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <span class="ln" style="--i:0"><span class="k">const</span> jemmy = {</span>
+      <span class="ln" style="--i:1">  nama: <span class="s">"Jemmy Jeremia"</span>,</span>
+      <span class="ln" style="--i:2">  sekolah: <span class="s">"SMKN 2 Cimahi"</span>,</span>
+      <span class="ln" style="--i:3">  kelas: <span class="s">"XI RPL A"</span>,</span>
+      <span class="ln" style="--i:4">  sertifikat: <span class="n">2</span>,</span>
+      <span class="ln" style="--i:5">  belajar: [<span class="s">"if"</span>, <span class="s">"loop"</span>]</span>
+      <span class="ln" style="--i:6">};</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROFIL -->
+<section class="sec white" id="profil">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <h2>Profil</h2>
+        <p>Kenalan dulu dengan saya.</p>
+      </div>
+    </div>
+    <div class="profile">
+      <div class="idcard">
+        <div class="top">
+          <div class="avatar">J</div>
+          <div>
+            <h3>Jemmy Jeremia</h3>
+            <span>Siswa Rekayasa Perangkat Lunak</span>
+          </div>
+        </div>
+        <dl>
+          <div class="row"><dt>Nama lengkap</dt><dd>Jemmy Jeremia</dd></div>
+          <div class="row"><dt>Sekolah</dt><dd>SMKN 2 Cimahi</dd></div>
+          <div class="row"><dt>Kelas</dt><dd>XI RPL A</dd></div>
+          <div class="row"><dt>Jurusan</dt><dd>Rekayasa Perangkat Lunak (RPL)</dd></div>
+          <div class="row"><dt>Instagram</dt><dd>@jjeemmy_</dd></div>
+          <div class="row"><dt>WhatsApp</dt><dd>0813-1292-3046</dd></div>
+        </dl>
+      </div>
+      <div class="about">
+        <p class="big">Halo, saya Jemmy Jeremia. Saya bersekolah di SMKN 2 Cimahi dan sekarang duduk di kelas XI RPL A.</p>
+        <p>Saya belajar membuat program dan website. Portofolio ini saya buat dengan HTML dan CSS untuk mengumpulkan materi yang sudah saya pelajari dan sertifikat dari kegiatan yang saya ikuti.</p>
+        <div class="chips" aria-label="Yang saya pelajari">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">Percabangan (If)</span>
+          <span class="chip">Perulangan (Loop)</span>
+          <span class="chip">Membuat website</span>
+          <span class="chip">Machine learning dasar</span>
+        </div>
+        <div class="aboutnote">
+          <h3>Kegiatan yang saya ikuti</h3>
+          <p>Saya ikut workshop pembuatan website bersama Namahosting pada 19 Mei 2026, dan menjadi instruktur workshop machine learning untuk prediksi kesehatan tanaman lewat citra daun pada 10 Agustus 2026. Sertifikatnya ada di bagian <a href="#sertifikat"><b>Sertifikat</b></a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERI IF -->
+<section class="sec" id="materi-if">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <h2>Materi If</h2>
+        <p>If atau percabangan membuat program bisa memilih tindakan berdasarkan kondisi. Kalau kondisinya benar, satu blok kode dijalankan. Kalau salah, blok itu dilewati.</p>
+      </div>
+      <div class="langswitch" role="group" aria-label="Pilih bahasa contoh">
+        <button type="button" data-l="py" aria-pressed="true">Python</button>
+        <button type="button" data-l="js" aria-pressed="false">JavaScript</button>
+      </div>
+    </div>
+
+    <div class="lessons">
+      <article class="lesson">
+        <h3><span class="tag">if</span> Satu kondisi</h3>
+        <p>Blok kode hanya jalan kalau kondisinya benar.</p>
+<pre class="code py"><code>umur = 17
+if umur >= 17:
+    print("Boleh bikin SIM")</code></pre>
+<pre class="code js"><code>let umur = 17;
+if (umur >= 17) {
+  console.log("Boleh bikin SIM");
+}</code></pre>
+      </article>
+      <article class="lesson">
+        <h3><span class="tag">if else</span> Dua pilihan</h3>
+        <p>Kalau kondisi salah, blok else yang jalan.</p>
+<pre class="code py"><code>nilai = 70
+if nilai >= 75:
+    print("Lulus")
+else:
+    print("Remedial")</code></pre>
+<pre class="code js"><code>let nilai = 70;
+if (nilai >= 75) {
+  console.log("Lulus");
+} else {
+  console.log("Remedial");
+}</code></pre>
+      </article>
+      <article class="lesson">
+        <h3><span class="tag">else if</span> Banyak pilihan</h3>
+        <p>Kondisi dicek dari atas. Yang pertama benar dipakai, sisanya dilewati.</p>
+<pre class="code py"><code>if nilai >= 90:
+    print("A")
+elif nilai >= 80:
+    print("B")
+else:
+    print("C")</code></pre>
+<pre class="code js"><code>if (nilai >= 90) {
+  console.log("A");
+} else if (nilai >= 80) {
+  console.log("B");
+} else {
+  console.log("C");
+}</code></pre>
+      </article>
+    </div>
+
+    <div class="opgrid">
+      <div class="panel">
+        <h3>Operator perbandingan</h3>
+        <table class="optable">
+          <tr><td>==</td><td>sama dengan</td></tr>
+          <tr><td>!=</td><td>tidak sama dengan</td></tr>
+          <tr><td>&gt;</td><td>lebih besar dari</td></tr>
+          <tr><td>&lt;</td><td>lebih kecil dari</td></tr>
+          <tr><td>&gt;=</td><td>lebih besar atau sama dengan</td></tr>
+          <tr><td>&lt;=</td><td>lebih kecil atau sama dengan</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>Operator logika</h3>
+        <table class="optable">
+          <tr><td><span class="py">and</span><span class="js">&amp;&amp;</span></td><td>DAN: kedua kondisi harus benar</td></tr>
+          <tr><td><span class="py">or</span><span class="js">||</span></td><td>ATAU: cukup satu kondisi yang benar</td></tr>
+          <tr><td><span class="py">not</span><span class="js">!</span></td><td>TIDAK: membalik benar menjadi salah</td></tr>
+        </table>
+        <div style="height:1rem"></div>
+<pre class="code py"><code>if umur >= 17 and punya_ktp:
+    print("Boleh daftar")</code></pre>
+<pre class="code js"><code>if (umur >= 17 && punyaKtp) {
+  console.log("Boleh daftar");
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="demo" id="demoIf">
+      <div>
+        <h3>Coba sendiri: cek nilai</h3>
+        <p class="hint">Geser nilainya dan lihat baris if mana yang dipilih.</p>
+        <div class="field">
+          <label for="nilai">Nilai: <span id="nilaiOut" class="mono">85</span></label>
+          <input type="range" id="nilai" min="0" max="100" value="85">
+        </div>
+        <div class="big-out">
+          <div class="grade" id="gradeOut">B</div>
+          <p id="gradeWhy"></p>
+        </div>
+      </div>
+      <div class="side">
+        <div class="trace" id="traceIf" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERI LOOP -->
+<section class="sec navy" id="materi-loop">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <h2>Materi Loop</h2>
+        <p>Loop atau perulangan menjalankan kode yang sama berkali-kali, jadi kita tidak perlu menulis baris yang sama berulang.</p>
+      </div>
+      <div class="langswitch" role="group" aria-label="Pilih bahasa contoh">
+        <button type="button" data-l="py" aria-pressed="true">Python</button>
+        <button type="button" data-l="js" aria-pressed="false">JavaScript</button>
+      </div>
+    </div>
+
+    <div class="lessons">
+      <article class="lesson">
+        <h3><span class="tag">for</span> Jumlah sudah jelas</h3>
+        <p>Dipakai kalau kita tahu berapa kali harus mengulang.</p>
+<pre class="code py"><code>for i in range(1, 6):
+    print(i)</code></pre>
+<pre class="code js"><code>for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}</code></pre>
+      </article>
+      <article class="lesson">
+        <h3><span class="tag">while</span> Selama benar</h3>
+        <p>Dipakai kalau jumlah putaran belum pasti, tetapi ada syarat berhenti.</p>
+<pre class="code py"><code>i = 1
+while i <= 5:
+    print(i)
+    i += 1</code></pre>
+<pre class="code js"><code>let i = 1;
+while (i <= 5) {
+  console.log(i);
+  i++;
+}</code></pre>
+      </article>
+      <article class="lesson">
+        <h3><span class="tag">do while</span> Jalan dulu</h3>
+        <p>Blok kode dijalankan sekali dulu, baru kondisinya dicek. Python tidak punya do while, jadi memakai while True dan break.</p>
+<pre class="code py"><code>i = 1
+while True:
+    print(i)
+    i += 1
+    if not (i <= 5):
+        break</code></pre>
+<pre class="code js"><code>let i = 1;
+do {
+  console.log(i);
+  i++;
+} while (i <= 5);</code></pre>
+      </article>
+    </div>
+
+    <div class="demo" id="demoLoop">
+      <div>
+        <h3>Coba sendiri: jalankan loop</h3>
+        <p class="hint">Pilih jenis loop dan jumlah putaran, lalu tekan Jalankan. Kodenya ikut berubah.</p>
+        <div class="field">
+          <label for="lpType">Jenis loop</label>
+          <select id="lpType">
+            <option value="for">for</option>
+            <option value="while">while</option>
+            <option value="dowhile">do while</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="lpMode">Yang dikerjakan</label>
+          <select id="lpMode">
+            <option value="cetak">Cetak angka 1 sampai n</option>
+            <option value="jumlah">Jumlahkan angka 1 sampai n</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="lpN">Nilai n (1 sampai 12)</label>
+          <input type="number" id="lpN" min="1" max="12" value="5" inputmode="numeric">
+        </div>
+        <div class="runrow">
+          <button class="btn run" id="lpRun" type="button">Jalankan</button>
+          <span id="lpMsg" class="mono" style="font-size:.85rem;color:var(--coral)"></span>
+        </div>
+      </div>
+      <div class="side">
+        <pre class="code" style="background:var(--ink);color:#DCE6FF"><code id="lpCode"></code></pre>
+        <div class="output" id="lpOut" aria-live="polite"><span class="o dim">Hasil akan muncul di sini.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERTIFIKAT -->
+<section class="sec white" id="sertifikat">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <h2>Sertifikat</h2>
+        <p>Klik gambar untuk memperbesar.</p>
+      </div>
+    </div>
+    <div class="certs">
+      <article class="cert">
+        <button class="thumb" type="button" data-full="cert1" aria-label="Perbesar sertifikat Namahosting goes to School">
+          <img src="sertifikat-1.jpg" alt="Sertifikat penghargaan Namahosting goes to School atas nama Jemmy Jeremia" loading="lazy">
+        </button>
+        <div class="body">
+          <span class="role">Peserta</span>
+          <h3>Workshop Pembuatan Website Profesional dan Mudah</h3>
+          <p>Diselenggarakan oleh Namahosting di SMK Negeri 2 Cimahi.</p>
+          <span class="meta">19 Mei 2026 | No. NH/2026/05/CRT/0420</span>
+          <button class="btn" type="button" data-full="cert1">Perbesar</button>
+        </div>
+      </article>
+      <article class="cert">
+        <button class="thumb" type="button" data-full="cert2" aria-label="Perbesar sertifikat instruktur workshop machine learning">
+          <img src="sertifikat-2.jpg" alt="Sertifikat penghargaan ULBI atas nama Jemmy Jeremia sebagai instruktur workshop machine learning" loading="lazy">
+        </button>
+        <div class="body">
+          <span class="role b">Instruktur</span>
+          <h3>Workshop Machine Learning untuk Prediksi Awal Kesehatan Tanaman</h3>
+          <p>Analisis citra daun untuk siswa Rekayasa Perangkat Lunak SMKN 2 Cimahi, bersama Universitas Logistik dan Bisnis Internasional (ULBI).</p>
+          <span class="meta">10 Agustus 2026 | No. 101r2/MANAJERRPM-ULBI/SRT/VIII/2026</span>
+          <button class="btn" type="button" data-full="cert2">Perbesar</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section class="sec" id="kontak">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <h2>Kontak</h2>
+        <p>Mau bertanya atau ngobrol soal coding? Hubungi saya lewat WhatsApp atau Instagram.</p>
+      </div>
+    </div>
+    <div class="contact">
+      <a class="ccard wa" href="https://wa.me/6281312923046" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-.9.7a3.7 3.7 0 0 1-1.6-1.6l.7-.9-1-2L9 9.5z" fill="#14213D" stroke="none"/></svg>
+        </span>
+        <span><small>WhatsApp</small><strong>0813-1292-3046</strong></span>
+      </a>
+      <a class="ccard ig" href="https://instagram.com/jjeemmy_" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="#14213D" stroke="none"/></svg>
+        </span>
+        <span><small>Instagram</small><strong>@jjeemmy_</strong></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Jemmy Jeremia. XI RPL A, SMKN 2 Cimahi.</div>
+</footer>
+
+<dialog id="lb" aria-label="Sertifikat diperbesar">
+  <div class="box">
+    <button class="close" type="button" id="lbClose">Tutup</button>
+    <img id="lbImg" alt="">
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Menu mobile */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  menu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* Menu aktif sesuai bagian yang sedang dilihat */
+  var links = Array.prototype.slice.call(menu.querySelectorAll('a'));
+  var ids = links.map(function(a){ return a.getAttribute('href').slice(1); });
+  function setActive(id){
+    links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) setActive(en.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ids.forEach(function(id){ var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+
+  /* Pilihan bahasa contoh (Python / JavaScript) */
+  var lang = 'py';
+  var switches = document.querySelectorAll('.langswitch button');
+  function setLang(l){
+    lang = l;
+    document.body.setAttribute('data-lang', l);
+    switches.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-l') === l); });
+    renderIf(); renderLoopCode();
+  }
+  switches.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.getAttribute('data-l')); }); });
+
+  /* Demo If */
+  var nilai = document.getElementById('nilai');
+  var nilaiOut = document.getElementById('nilaiOut');
+  var gradeOut = document.getElementById('gradeOut');
+  var gradeWhy = document.getElementById('gradeWhy');
+  var traceIf = document.getElementById('traceIf');
+  var rules = [[90,'A'],[80,'B'],[70,'C'],[60,'D']];
+
+  function ifLine(i){
+    var r = rules[i];
+    if (lang === 'py') return (i === 0 ? 'if' : 'elif') + ' nilai >= ' + r[0] + ': grade = "' + r[1] + '"';
+    return (i === 0 ? 'if' : 'else if') + ' (nilai >= ' + r[0] + ') grade = "' + r[1] + '";';
+  }
+  function elseLine(){ return lang === 'py' ? 'else: grade = "E"' : 'else grade = "E";'; }
+
+  function renderIf(){
+    var v = parseInt(nilai.value, 10);
+    nilaiOut.textContent = v;
+    var hit = -1;
+    for (var i = 0; i < rules.length; i++) { if (v >= rules[i][0]) { hit = i; break; } }
+    var g = hit === -1 ? 'E' : rules[hit][1];
+    gradeOut.textContent = g;
+    gradeWhy.textContent = hit === -1
+      ? 'Tidak ada kondisi yang benar, jadi blok else yang dijalankan.'
+      : 'Kondisi nilai >= ' + rules[hit][0] + ' adalah yang pertama benar, jadi grade ' + g + ' dipilih.';
+    traceIf.innerHTML = '';
+    var total = rules.length + 1;
+    for (var j = 0; j < total; j++) {
+      var isElse = j === rules.length;
+      var status, label;
+      if (hit !== -1 && j > hit) { status = 'skip'; label = 'dilewati'; }
+      else if ((!isElse && j === hit) || (isElse && hit === -1)) { status = 'yes'; label = 'dipakai'; }
+      else { status = 'no'; label = 'salah'; }
+      var d = document.createElement('div');
+      d.className = 'line ' + status;
+      var b = document.createElement('span'); b.className = 'badge'; b.textContent = label;
+      var t = document.createElement('span'); t.textContent = isElse ? elseLine() : ifLine(j);
+      d.appendChild(b); d.appendChild(t);
+      traceIf.appendChild(d);
+    }
+  }
+  nilai.addEventListener('input', renderIf);
+
+  /* Demo Loop */
+  var lpType = document.getElementById('lpType');
+  var lpMode = document.getElementById('lpMode');
+  var lpN = document.getElementById('lpN');
+  var lpRun = document.getElementById('lpRun');
+  var lpCode = document.getElementById('lpCode');
+  var lpOut = document.getElementById('lpOut');
+  var lpMsg = document.getElementById('lpMsg');
+  var timers = [];
+
+  function getN(){
+    var n = parseInt(lpN.value, 10);
+    if (isNaN(n) || n < 1 || n > 12) return null;
+    return n;
+  }
+  function renderLoopCode(){
+    var n = getN() || 5;
+    var t = lpType.value, m = lpMode.value, s = '';
+    var body = lang === 'py'
+      ? (m === 'cetak' ? 'print(i)' : 'total += i')
+      : (m === 'cetak' ? 'console.log(i);' : 'total += i;');
+    if (lang === 'py') {
+      if (m === 'jumlah') s += 'total = 0\n';
+      if (t === 'for') s += 'for i in range(1, ' + (n + 1) + '):\n    ' + body;
+      else if (t === 'while') s += 'i = 1\nwhile i <= ' + n + ':\n    ' + body + '\n    i += 1';
+      else s += 'i = 1\nwhile True:\n    ' + body + '\n    i += 1\n    if not (i <= ' + n + '):\n        break';
+      if (m === 'jumlah') s += '\nprint(total)';
+    } else {
+      if (m === 'jumlah') s += 'let total = 0;\n';
+      if (t === 'for') s += 'for (let i = 1; i <= ' + n + '; i++) {\n  ' + body + '\n}';
+      else if (t === 'while') s += 'let i = 1;\nwhile (i <= ' + n + ') {\n  ' + body + '\n  i++;\n}';
+      else s += 'let i = 1;\ndo {\n  ' + body + '\n  i++;\n} while (i <= ' + n + ');';
+      if (m === 'jumlah') s += '\nconsole.log(total);';
+    }
+    lpCode.textContent = s;
+  }
+  function addLine(text, cls){
+    var s = document.createElement('span');
+    s.className = 'o' + (cls ? ' ' + cls : '');
+    s.textContent = text;
+    lpOut.appendChild(s);
+    lpOut.scrollTop = lpOut.scrollHeight;
+  }
+  function runLoop(){
+    timers.forEach(clearTimeout); timers = [];
+    var n = getN();
+    if (n === null) { lpMsg.textContent = 'Isi n dengan angka 1 sampai 12.'; return; }
+    lpMsg.textContent = '';
+    lpOut.innerHTML = '';
+    var m = lpMode.value, total = 0, steps = [];
+    for (var i = 1; i <= n; i++) {
+      if (m === 'cetak') steps.push(['Putaran ' + i + ': ' + i, '']);
+      else { var before = total; total += i; steps.push(['Putaran ' + i + ': total = ' + before + ' + ' + i + ' = ' + total, '']); }
+    }
+    steps.push([m === 'cetak' ? 'Selesai. Loop berhenti karena i menjadi ' + (n + 1) + '.' : 'Selesai. Hasil total = ' + total, 'done']);
+    steps.forEach(function(st, idx){
+      if (reduce) addLine(st[0], st[1]);
+      else timers.push(setTimeout(function(){ addLine(st[0], st[1]); }, idx * 320));
+    });
+  }
+  [lpType, lpMode, lpN].forEach(function(el){ el.addEventListener('input', renderLoopCode); });
+  lpRun.addEventListener('click', runLoop);
+
+  /* Sertifikat diperbesar */
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lbImg');
+  var certSrc = {};
+  document.querySelectorAll('.cert').forEach(function(c, i){
+    var img = c.querySelector('img');
+    certSrc['cert' + (i + 1)] = { src: img.src, alt: img.alt };
+  });
+  document.querySelectorAll('[data-full]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var c = certSrc[b.getAttribute('data-full')];
+      lbImg.src = c.src; lbImg.alt = c.alt;
+      if (typeof lb.showModal === 'function') lb.showModal(); else lb.setAttribute('open','');
+    });
+  });
+  document.getElementById('lbClose').addEventListener('click', function(){ lb.close(); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) lb.close(); });
+
+  setLang('py');
+})();
+</script>
+</body>
+</html>
